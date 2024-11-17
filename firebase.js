@@ -2,8 +2,14 @@
 
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
  
-  import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
- 
+  import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged
+    , updateProfile, updateEmail, sendEmailVerification,signOut
+  } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+
+  import { serverTimestamp,where, getFirestore,getDocs ,doc,
+    arrayUnion,arrayRemove,getDoc,onSnapshot, setDoc, collection,
+    query,orderBy,updateDoc,addDoc 
+  } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
   
 
   const firebaseConfig = {
@@ -15,12 +21,14 @@
     appId: "1:279370285960:web:71550ec29729972cc4303d"
   };
 
-
- 
   const app = initializeApp(firebaseConfig);
 
   const auth = getAuth();
-console.log(app,auth);
+  const db = getFirestore(app); 
 
 
-export {getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged}
+export {serverTimestamp,getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged
+  , updateProfile, updateEmail, sendEmailVerification,signOut ,db, collection,doc,addDoc,getDocs ,setDoc 
+  ,getDoc,onSnapshot,query,orderBy,updateDoc,
+  arrayUnion,arrayRemove,where
+}

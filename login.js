@@ -8,12 +8,12 @@ let signInBtn = document.getElementById('btn');
 let signInEmail = document.getElementById('email');
 let signInPass = document.getElementById('pass');
 
-
+if(signInBtn){
     
-    signInBtn.addEventListener("click", (e) => {
-        e.preventDefault();
+    signInBtn.addEventListener("click", () => {
       
-        if(signInEmail.value.trim() && signInPassword.value.trim()){
+      
+        if(signInEmail.value && signInPass.value){
 //validation
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
@@ -58,7 +58,7 @@ let signInPass = document.getElementById('pass');
     })
    }
   });
-       
+}  
 
 
 
